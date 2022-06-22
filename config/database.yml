@@ -27,11 +27,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool:5
+  pool: 5
 
 development:
   <<: *default
   database: books_development
+
+test:
+ <<: *default
+ database: books_development_test
 
 # production:
 #    url: <%= ENV['DATABASE_URL'] %>
